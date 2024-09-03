@@ -4,7 +4,7 @@ from .serializers import CarSerializer
 
 class CarViewSet(viewsets.ModelViewSet):
     queryset = Cars.objects.all()
-    
+    """
     permission_classes = [permissions.AllowAny]
     """
     def get_permissions(self):
@@ -13,7 +13,7 @@ class CarViewSet(viewsets.ModelViewSet):
         else:  # POST, PUT, DELETE requests
             permission_classes = [permissions.IsAuthenticated]
         return [permission() for permission in permission_classes]
-    """
+    
    
     serializer_class = CarSerializer
     
