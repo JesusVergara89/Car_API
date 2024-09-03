@@ -7,6 +7,8 @@ class Cars(models.Model):
     price = models.DecimalField(max_digits=10,decimal_places=2)
     price_1 = models.DecimalField(max_digits=10,decimal_places=2)
     image_url = models.JSONField(default=list, blank=False)
+    show_image = models.CharField(max_length=300, default='No image available')
+    comparations = models.JSONField(default=list, blank=False)
     colors = models.JSONField(default=list, blank=False) 
     versions = models.JSONField(default=list, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
